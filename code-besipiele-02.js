@@ -8,30 +8,30 @@ Technologie : HTML5, CSS3, Javascript
 Software: Samsung SDK
 ****************************************************************************************/
 
-var tvKey = new Common.API.TVKeyValue();
+//var tvKey = new Common.API.TVKeyValue();
 
 
 /* timer function to detect how long it's been without any key event
   so that the controls can fade out after a certain time
 ================================================================================ */
-var c=0;
+var c = 0;
 var t;
-var controlsShow=true;
+var controlsShow = true;
 var keyPressed = false;
 
-function timedCount(){
+function timedCount() {
 	c += 1;
-	t=setTimeout("timedCount()",1000);
+	t = setTimeout("timedCount()",1000);
 	
 	// controls fadeout when no key event for longer than 5 secs
-	if(c==5){
+	if(c == 5){
 		keyPressed = false;
 		fade("test");
 		fade("vjs-controls");
 	} 
 }
 
-function doTimer(){
+function doTimer() {
 	//if (!timer_is_on){
 	//	timer_is_on=1;
 		timedCount();
@@ -73,14 +73,14 @@ var arr_navsHorizontal = new Array;
 
 function doNavKeyPress(e) {
 	alert("c before =" +c);
-	c=0;
+	c = 0;
 	//timedCount();
 	//showFadeControls();
 	//keyPressed = true;
 	//show controls as soon as a key event is trigered
 	show("vjs-controls");
 	show("test");
-	if(el_NavFocus >5 && el_NavFocus <=13 && e.keyCode ==  tvKey.KEY_LEFT){
+	if(el_NavFocus > 5 && el_NavFocus <= 13 && e.keyCode ==  tvKey.KEY_LEFT){
 	 // if (e.keyCode ==  tvKey.KEY_LEFT) {
 			$("." + arr_navsHorizontal[el_NavFocus] + "> div").removeClass('active');
 			$("." + arr_navsHorizontal[el_NavFocus] + "> div").addClass('inactive');
@@ -91,7 +91,7 @@ function doNavKeyPress(e) {
 			//alert (el_NavFocus);
 			//keyPressed = true;
 	}  
-	if (el_NavFocus >=5 && el_NavFocus <13  && e.keyCode ==  tvKey.KEY_RIGHT) {
+	if (el_NavFocus >= 5 && el_NavFocus < 13  && e.keyCode ==  tvKey.KEY_RIGHT) {
 			$("." + arr_navsHorizontal[el_NavFocus] + "> div").removeClass('active');
 			$("." + arr_navsHorizontal[el_NavFocus] + "> div").addClass('inactive');
 	  		el_NavFocus +=1;
@@ -101,11 +101,11 @@ function doNavKeyPress(e) {
 			//alert (el_NavFocus);
 			//keyPressed = true;
 	}
-	if(el_NavFocus <=5 && el_NavFocus >0 && e.keyCode ==  tvKey.KEY_UP){
+	if(el_NavFocus <= 5 && el_NavFocus > 0 && e.keyCode == tvKey.KEY_UP){
 		//if (e.keyCode ==  tvKey.KEY_UP) {
 			$("." + arr_navsHorizontal[el_NavFocus] + "> div").removeClass('active');
 			//$("." + arr_navsHorizontal[el_NavFocus] + "> div").adClass('inactive');
-	  		el_NavFocus -=1;
+	  		el_NavFocus -= 1;
 			//el_NavFocus_Vertical +=1;
 			//alert ('left' + el_NavFocus);
 			$("." + arr_navsHorizontal[el_NavFocus] + "> div").removeClass('inactive');
@@ -113,18 +113,18 @@ function doNavKeyPress(e) {
 			//alert (el_NavFocus);
 			//keyPressed = true;
 	}
-	if(el_NavFocus <=4 && el_NavFocus >=0 && e.keyCode ==  tvKey.KEY_DOWN){
+	if(el_NavFocus <= 4 && el_NavFocus >= 0 && e.keyCode == tvKey.KEY_DOWN){
 		//} else if (e.keyCode ==  tvKey.KEY_DOWN) {
 			$("." + arr_navsHorizontal[el_NavFocus] + "> div").removeClass('active');
 			$("." + arr_navsHorizontal[el_NavFocus] + "> div").addClass('inactive');
-	  		el_NavFocus +=1;
+	  		el_NavFocus += 1;
 			//alert ('left' + el_NavFocus);
 			$("." + arr_navsHorizontal[el_NavFocus] + "> div").removeClass('inactive');
 			$("." + arr_navsHorizontal[el_NavFocus] + "> div").addClass('active');
 		    //alert (el_NavFocus);		
 			//keyPressed = true;
 	}
-	if(contentCheckBtn[allBtns[el_NavFocus][0]]!=1 && e.keyCode == tvKey.KEY_ENTER){
+	if(contentCheckBtn[allBtns[el_NavFocus][0]] != 1 && e.keyCode == tvKey.KEY_ENTER){
 		getContent(allBtns[el_NavFocus][0]);
 		if()
 		checkWhichContent(allBtns[el_NavFocus][0]);

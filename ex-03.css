@@ -1,404 +1,123 @@
-/***************************************************************************************
-Projekt: EURO I Company Website
-Kunde: EURO I GmbH
-Herausforderung: WordPress theme benutzen, Child theme anpassen, responsive design
-Plattformen: Web, Multiscreen Geräte 
-Dienstleistungen: Website Entwicklung |  WordPress |  WordPress ChildTheme 
-Technologie : HTML5, CSS3, Javascript
-Software: WordPress
-****************************************************************************************/
-
-
-
-
 /*
-Theme Name: ThemeFit Hybrid Child
-URL: http://demo.themefit.com/hybrid
-Description: A Responsive News or Blog Theme for Wordpress 3.3.1
-Author: ThemeFit
-Author URL: http://themefit.com
-Version: 1.0
-Template: themefit-hybrid
-*/
+chiachiwu.com
+@2013 built with jQuery Mobile
+Author: Chia Chi wu
 
-@import url("../themefit-hybrid/style.css");
 
-/*
 Index:
-  - 01. css generated from admin/admin-functions.ph
-	- 02. top
-	- 03. sidebar
-	- 04. footer
+	-  general layout
+	-  main-nav vs. mobile-nav
+	-  text/ font
+	-  grid - 2 columns
+	-  footer
+	-  media queries
+
 */
 
 
-/* 01 ==========================================================================
-style generated from the admin/admin-functions.php 
-line 224 add_action('wp-head', 'of_head_css') has been commented out
-the style is therefore defined here
-================================================================================*/
-body {
-	background:#e9e9e9; 
- 	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif; 
-	font-style:normal; 
-	color: #707070; 
-}
-#site-wrapper { 
-	background:#e9e9e9; 
-}
-h1, h2, h3, h4, h5, h6, 
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, 
-a h1, a h2, a h3, a h4, a h5, a h6 { 
-	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif; 
-	font-style:normal; 
-	color: #767b7e; 
-	text-decoration:none; 
-}
-blockquote { 
-	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif; 
-	color: #333; 
-}
-.primary-color-background { 
-	background-color:#333; 
-}
-.primary-color-text { 
-	color:#333; 
-}
-.primary-color-text a { 
-	color:#333; 
-}
-.pagination span.current { 
-	background-color:#333; 
-}
-a { 
-	color:#0666CC;
-}
-.accent-color-background { 
-	background-color:#06C; 
-}
-.accent-color-text { 
-	color:#06C;
-}
-a.accent-color-background.no-hover:hover { 
-	background-color:#06C; 
-}
-a.accent-color-text.no-hover:hover { 
-	color:#06C;
-}
-submit, input[type="submit"] { 
-	background-color:#06C; 
-}
-.heavy-border-styles {
-	border-color:#333; 
-	border-style:solid; 
-} 
-#main-nav #main-nav-container ul.menu li.menu-item a, 
-#main-nav #main-nav-container ul.menu li.menu-item:hover li.menu-item a, 
-#main-nav.tf-mobile-menu #main-nav-container ul.menu li.menu-item a, 
-#main-nav.tf-mobile-menu #main-nav-container ul.menu li.menu-item:hover a, 
-#main-nav.tf-mobile-menu #main-nav-container ul.menu li.menu-item.current-menu-item ul li a, 
-#main-nav.tf-mobile-menu #main-nav-container ul.menu li.menu-item.current-page-ancestor ul li a, 
-#main-nav.tf-mobile-menu #main-nav-container ul.menu li.menu-item.current-post-ancestor ul li a, 
-#main-nav.tf-mobile-menu #main-nav-container ul.menu li.menu-item.current-menu-ancestor ul li a, 
-#tf-sub-page-nav li a { 
-	color:#333; 
-}
-#main-nav #main-nav-container ul.menu li.menu-item:hover a, 
-#main-nav #main-nav-container ul.menu li.menu-item a:hover, 
-#main-nav #main-nav-container ul.menu li.current-menu-item a, 
-#main-nav #main-nav-container ul.menu li.current-page-ancestor a, 
-#main-nav #main-nav-container ul.menu li.current-menu-ancestor a, 
-#main-nav #main-nav-container ul.menu li.current-post-ancestor a, 
-#main-nav.tf-mobile-menu #main-nav-container ul.menu li.menu-item#no-menu-items:hover a { 
- background-color:#06C; 
- color:#FFF; 
-}
-#main-nav #main-nav-container ul.menu li.menu-item ul.sub-menu li.menu-item a:hover, 
-#main-nav #main-nav-container ul.menu li.menu-item ul.sub-menu li.current-menu-item a, 
-#main-nav.tf-mobile-menu #main-nav-container ul.menu li.menu-item a:hover, 
-#main-nav.tf-mobile-menu #main-nav-container ul.menu li.menu-item.current-menu-item a, 
-#main-nav.tf-mobile-menu #main-nav-container ul.menu li.menu-item.current-page-ancestor a, 
-#main-nav.tf-mobile-menu #main-nav-container ul.menu li.menu-item.current-menu-ancestor a, 
-#main-nav.tf-mobile-menu #main-nav-container ul.menu li.menu-item.current-post-ancestor a, 
-#main-nav.tf-mobile-menu #main-nav-container ul.menu li.menu-item.current-menu-item ul.sub-menu li.menu-item a:hover, 
-#main-nav.tf-mobile-menu #main-nav-container ul.menu li.menu-item.current-post-ancestor ul.sub-menu li.menu-item a:hover, 
-#tf-sub-page-nav li a:hover, 
-#tf-sub-page-nav li.tf-current-menu-item a { 
-	color:#06C; 
-	background: none; 
-}
-a:hover span.accent-color-background, 
-a:hover a.accent-color-background, 
-a.accent-color-background:hover{ 
-	background-color:#0075EB; 
-}
-submit:hover, input[type="submit"]:hover { 
-	background-color:#0075EB; 
-}
-#main-nav #main-nav-container ul.menu li.menu-item#no-menu-items a:hover, 
-#main-nav.tf-mobile-menu #main-nav-container ul.menu li.menu-item#no-menu-items a:hover { 
-	background-color:#0075EB; 
-}
-a.primary-color-text:hover, a span.primary-color-text:hover { 
-	color:#E73636; 
-}
-h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover, 
-a:hover h1, a:hover h2, a:hover h3, a:hover h4, a:hover h5, a:hover h6 { 
-	color:#E73636; 
-	text-decoration:none; 
-} 
+/*==========================================
+ general layout
+==========================================*/
+
+#wrapper {width:800px; padding: 0 5px;}
+.ui-mobile, .ui-mobile .ui-page {background:#FFF;}
+.ui-content {background:#FFF; padding:0;}
+img{max-width: 100%; height: auto;}
+.ui-header .ui-title, .ui-footer .ui-title {text-align:left; width:100%; margin:20px auto 10px auto;}
 
 
 
 /*==========================================
-top
+main-nav vs. mobile-nav
 ==========================================*/
-#tf-page-title {
-    border-bottom: 1px solid #C0C0C0;
-	padding:25px 0 10px;
-}
-h1#site-title, h2#site-description {
-	font-weight:normal;
-	font-size:0.95em;
-	color:#666666;
-}
-h1#site-title {
-	margin-top: 5px;
-}
-h2#site-description {
-	display:inline-block;
-	text-align:justify;
-}
+
+.ui-navbar li .ui-btn .ui-btn-inner {padding:0;}
+.ui-btn-text { color: #000000; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11.5px; font-weight:normal; }
+.ui-btn-inner { overflow:visible; text-overflow: ellipsis; white-space: normal; border-top:none;}
+.ui-navbar li .ui-btn {border-right-width:1px;}
+.main-nav .ui-navbar li .ui-btn .ui-btn-inner {background:#FFF; text-shadow:none;}
+.ui-navbar li .ui-btn .ui-btn-inner:hover { text-shadow:none;box-shadow:none;}
+.ui-btn-hover-c {color:red;}
+.ui-navbar li .ui-btn .ui-btn-inner .ui-bti-hover-c span.ui-btn-tex {color:Red;}
+.ui-navbar li .ui-btn .ui-btn-active  .ui-btn-inner .ui-btn-text {border-right:1px solid #000; font-weight:bold;}
+.ui-collapsible-heading .ui-btn-inner, .ui-collapsible-heading .ui-btn-icon-left .ui-btn-inner, .mobile-nav {display:none;}
+/*mobile-nav*/
+.mobile-nav {width:98.05%;}
+.ui-btn-icon-left .ui-icon {left:20px;}
 
 
 /*==========================================
-content
+text/ font
 ==========================================*/
-#content {
-	background: url("images/Verlauf/horizontal_verlauf_bottom.png") bottom left no-repeat;
-	padding-bottom:20px;
-}
-.content-container p {
-	margin-bottom: 20px;
-	text-align:justify;
-}
+h2 span {font-weight:normal; font-size:80%; color:#000;}		
+h2, h3 {font-size:12.5px; text-align:left; color:#8C8C8C;}
+h2 { margin-top:55px;}
+h2 > a {text-decoration:none;}
+h3{margin-top:25px;}
+h3 + p{margin-top:-10px; line-height: 20px;}
+p { color: #000000; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11.5px; line-height: 22px; text-align:justify; margin-top:-5px;}
+p > span {color:#8c8c8c;}
+span.mobile-hide {color:#000;}
+.caption {font-size:70%; color:#8c8c8c; text-align:right;}
 
-.tf-button {
-	float:right;
-}
-.tf-button + .tf-button{
-	margin-right:5px;
-}
-
-/*==========================================
-content formular
-==========================================*/
-textarea, input[type="textarea"], input[type="text"]{
-	margin-bottom:10px;
-	max-width:100%;
-	width:100%;
-}
-form {
-	width:95%;
-}
-span.your-name input.wpcf7-validates-as-required{
-	width:92%;
-}
-#contact{
-	list-style:none;
-	margin:0;
-}
-#contact li ul {
-	margin-left:0;
-}
-#contact li ul li {
-	float:left;
-	width:50%;
-	list-style:none;
-}
-span.text-email, span.text-name {
-	display:block;
-}
 
 
 /*==========================================
-sidebar
+grid - 2 columns
 ==========================================*/
-#tf-right-column ul.sidebar > li {
-	background: url("images/Verlauf/sidebar_box_verlauf.png") top left no-repeat;
 
-}
-#tf-right-column ul li ul li{
-	background-color:none;
-}
-#content .layout-container {
-    padding: 0;
-}
-.pagination {
-    clear: both;
-    margin: 0px;
-}
-ul.sidebar li.sidebar-widget-item {
-    border-top-width: 0px;
-	padding-bottom:20px;
-}
-ul.sidebar .widget_nav_menu .current-menu-item > a:first-child{
-	font-weight:bold;	
-}
-ul.sidebar .widget_nav_menu ul li ul > li {
-	margin-top:-12px;
+.ui-grid-a {position:relative; margin-bottom: 2px;}
+.ui-grid-a > :last-child  { text-align:justify; padding-left:10px; position:absolute; bottom:-12px;right:0;}
+.ui-block-b p {font-size:11px;}
+.ui-block-b h3 {margin-top:0;}
 
-}
-ul.sidebar li.sidebar-widget-item h5 {
-    font-weight: 300;
-}
+
+
 
 /*==========================================
 footer
 ==========================================*/
-#upper-footer {
-	border-top: 1px solid #C0C0C0;
-    padding: 20px 0 10px;
-	background: url("images/Verlauf/vertikal_verlauf.png") 17% 0 no-repeat;
-}
-ul#footer-widgets {
-	margin-left:0;
-}
-#lower-footer {
-	border-top: 1px solid #C0C0C0;
-}
-#footer-widgets ul.menu li a{
-	color:#666666;
-}
-ul#footer-widgets li.footer-widget-item {
-	width: 12.5%;
-}
-#upper-footer ul#footer-widgets ul li {
-	font-weight:bold;
-}
-#upper-footer ul#footer-widgets ul li ul li a{
-	position:relative;
-	left: -20px;
-	font-weight:normal;
-}
-.footer-widget-item a {
-	color:#A5A8A9;
-}
-li.footer-widget-item ul li ul {
-    padding-top: 15px;
-}
-li.footer-widget-item ul li {
-    padding: 4px 0;
-}
-ul#footer-widgets li.footer-widget-item {
-    margin-bottom: 20px;
-}
-#lower-footer {
-	border-top: 1px solid #C0C0C0;
-	padding-left: 30px;
-	padding-top:10px;
-}
-#lower-footer p#lower-left-text {
-	max-width: 90%;
-}
-#lower-footer p {
-	line-height: 1em;
-	font-size:0.85em;
-}
-#lower-footer p span{
-	padding-right: 5em;
-}
-#lower-footer p > span:last-child{
-	padding-right: 0;
-	display:inline;
-}
-#lower-footer ul#icon-footer li{
-	float:left;
-	list-style:none;
-}
-ul#icon-footer li a {
-    background-color: #888888;
-    background-position: center center;
-    background-repeat: no-repeat;
-    border-radius: 3px 3px 3px 3px;
-    display: block;
-    height: 23px;
-    margin: 0 0 0 6px;
-    padding: 0;
-    width: 23px;
-}
-ul#icon-footer li a:hover { 
-	background-color:#AAA; 
-}
-#lower-footer ul#icon-footer li.facebook-icon a{
-    background-image: url("images/facebook-icon.png");
-}
-#lower-footer ul#icon-footer li.twitter-icon a{
-    background-image: url("images/twitter-icon.png");
-}
-img.yavido-logo {
-	vertical-align: middle;
-	float:left;
-	margin-right:5px;
-}
-h1 span {vertical-align: middle;}
-.page-id-92 #content  #tf-page-title{float:left; }
-.page-id-92 #tf-page-title {}
+.ui-footer {background:none; border:none; font-weight:normal; font-size:11.5px; }
+.ui-footer p {color:#8c8c8c; text-shadow:none; font-size: 80%; margin-top:10px;}
 
 
-/*==========================================
-arrows at the bottom of referenzen to navigate
-==========================================*/
-.arrow-left-referenzen, .arrow-right-referenzen {
-	height: 32px;
-    margin: 2px;
-    width: 50px;
-}
-.arrow-left-referenzen {
-	background: #0066CC url(http://euro1.elbnetz.com/wp-content/themes/projekte/themefit-hybrid/images/leftarrow.png) no-repeat center;
-	float:left;
-	margin-top:-20px;
-}
-.arrow-right-referenzen {
-	background:#0066CC url(http://euro1.elbnetz.com/wp-content/themes/projekte/themefit-hybrid/images/rightarrow.png) no-repeat center;
-	float:right;
-}
-#content div + p{margin-top:20px;}
-div.tf-slideshow-wrapper div.tf-slideshow-controls {margin-bottom:20px;}
 
-/*==========================================
-table layout
-==========================================*/
-.table-container{margin-bottom:20px; float:left;}
-.table-left {
-	float:left; width: 40%; display:inline-block; font-weight:bold; line-height:130%;
-}
-.table-right {
-	float:left; width: 60%; display:inline-block; line-height:130%;
-}
-
-/*==========================================
-Slideshow description when two lines
-==========================================*/
-.page-id-1080 .sidebar li:last-child {padding-bottom:20px;}
 
 
 /*==========================================
 media queries
 ==========================================*/
-@media only screen and (max-width: 480px) {
-	#searchform #s {
-		margin-left: -80%;
-		width: 350%;
-	}
-	input#s {	
-		max-width: 205px;
-	}
-	#header{
-		margin-bottom:-40px;
-	}
-	#tf-left-column .content-container {
-		margin-top:-30px;
-	}
+
+@media screen and (max-width: 800px) {
+	.ui-collapsible-heading .ui-btn-inner, .ui-collapsible-heading .ui-btn-icon-left .ui-btn-inner {padding:none;}
+	.ui-collapsible-heading .ui-btn-inner, .ui-collapsible-heading .ui-btn-icon-left .ui-btn-inner, .mobile-nav {display:block; /*background:#FFF;*/}
+	.ui-btn-text {width:92%; padding:0 10px;}
+	.mobile-nav-title {font-size: 10px;}
+	.ui-btn-active {border:none; background:none; text-shadow:none;}
+	.ui-content, .ui-footer {padding:0 10px;}
+	.ui-header, .main-nav {display:none;}
+	h2 {margin-top:20px;}
+	/* grid - 3 columns */
+	.ui-grid-b .ui-block-a, .ui-grid-b .ui-block-b, .ui-grid-b .ui-block-c {width:32.66%;}
+	.ui-grid-b .ui-block-a, .ui-grid-b .ui-block-b {margin-right:1%;}
 }
 
+@media screen and (max-width: 600px) {
+	.year {display:block;}
+}
+
+@media only screen and (min-width: 800px) {
+	.ui-page {width: 800px !important; margin: 0 auto !important; position: relative !important;}
+	.ui-footer { max-width: 800px; margin: 0 auto;}
+	BODY { background-color: #FFF !important;}
+}
+
+@media screen and (max-width: 360px) {
+	.ui-grid-a, .ui-grid-a .ui-block-a, .ui-grid-a .ui-block-b {float:none;width:100%; position:relative; padding:0;margin-bottom: 0;}
+	h3.contact {margin-top:-50px;}
+	p {line-height:20px; font-size:13px;}
+	.ui-block-b h3 {margin-top:-15px;}
+	.ui-block-b p {margin-bottom:30px; line-height:16px;}
+	.mobile-hide {display:none;}
+	.mobile-nav {width:95.5%;}
+}

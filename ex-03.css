@@ -37,8 +37,6 @@ main-nav vs. mobile-nav
 .ui-navbar li .ui-btn {border-right-width:1px;}
 .main-nav .ui-navbar li .ui-btn .ui-btn-inner {background:#FFF; text-shadow:none;}
 .ui-navbar li .ui-btn .ui-btn-inner:hover { text-shadow:none;box-shadow:none;}
-.ui-btn-hover-c {color:red;}
-.ui-navbar li .ui-btn .ui-btn-inner .ui-bti-hover-c span.ui-btn-tex {color:Red;}
 .ui-navbar li .ui-btn .ui-btn-active  .ui-btn-inner .ui-btn-text {border-right:1px solid #000; font-weight:bold;}
 .ui-collapsible-heading .ui-btn-inner, .ui-collapsible-heading .ui-btn-icon-left .ui-btn-inner, .mobile-nav {display:none;}
 /*mobile-nav*/
